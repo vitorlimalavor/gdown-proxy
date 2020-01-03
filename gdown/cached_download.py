@@ -48,8 +48,10 @@ def assert_md5sum(filename, md5, quiet=False, blocksize=None):
         "MD5 doesn't match:\nactual: {}\nexpected: {}".format(md5_actual, md5)
     )
 
+
 # -- (CHANGED) modified function signature --
-def cached_download(url, path=None, md5=None, quiet=False, postprocess=None, proxy=None):
+def cached_download(url, path=None, md5=None, quiet=False,
+                    postprocess=None, proxy=None):
     if path is None:
         path = (
             url.replace('/', '-SLASH-')
